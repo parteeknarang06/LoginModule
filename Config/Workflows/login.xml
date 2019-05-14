@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	For NAVIGATION tag
+	value 1 represents FORWARD navigation
+	value 2 represents SEND_REDIRECT navigation
+	value 3 represents INCLUDE navigation
+-->
+<WORKFLOWS_DOC>
+
+	<WORKFLOW class="com.model.service.LoginHandler" name="LOGIN">
+	
+		<PAGES>
+			<PAGE name="LOGIN_PAGE" jsp="/view/jsp/login/index.jsp"/>
+			<PAGE name="HOME" jsp=""/>
+		</PAGES>
+		
+		<ACTIONS>
+			<ACTION method="checkLoginStatus" name="CHECK_STATUS">
+				<RESULTS>	
+					<RESULT name="LOGIN_OK" dest="HOME">
+						<NAVIGATION>1</NAVIGATION>
+					</RESULT>	
+					<RESULT name="NEED_LOGIN" dest="LOGIN_PAGE">
+						<NAVIGATION>2</NAVIGATION>
+					</RESULT>
+				</RESULTS>
+			</ACTION>
+		</ACTIONS>
+		
+	</WORKFLOW>
+	
+</WORKFLOWS_DOC>

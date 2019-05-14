@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" 
+	id="WebApp_ID" 
+	version="3.1">
+ 
+  <display-name>LoginModule</display-name>
+ 
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.controllers.servlets.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/loginCheck/*</url-pattern>
+  </servlet-mapping>
+  
+  <listener>
+    <listener-class>com.controllers.listners.FileLoaders</listener-class>
+  </listener>
+  
+  <filter>
+    <filter-name>RequestFilter</filter-name>
+    <filter-class>com.controllers.filters.RequestFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>RequestFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+  </filter-mapping>
+  
+  <context-param>
+    <param-name>AppBasePath</param-name>
+    <param-value>/home/dataguise/Documents/workspace App/LoginModule</param-value>
+  </context-param>
+  <context-param>
+    <param-name>PropertiesRelativePath</param-name>
+    <param-value>/Config/Properties/</param-value>
+  </context-param>
+  <context-param>
+    <param-name>WorkflowsRelativePath</param-name>
+    <param-value>/Config/Workflows/</param-value>
+  </context-param>
+  
+</web-app>
