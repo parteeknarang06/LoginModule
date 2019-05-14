@@ -19,7 +19,7 @@ public class WorkflowRepresentation implements Workflow {
 	
 	@Override
 	public HashMap<String, String> getPagesList() {
-		return pagesList;
+		return (HashMap<String, String>) pagesList.clone();
 	}
 	
 	@Override

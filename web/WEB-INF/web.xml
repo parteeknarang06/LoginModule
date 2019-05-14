@@ -19,6 +19,9 @@
   <listener>
     <listener-class>com.controllers.listners.FileLoaders</listener-class>
   </listener>
+  <listener>
+  	<listener-class>com.controllers.listners.ContentLoaders</listener-class>
+  </listener>
   
   <filter>
     <filter-name>RequestFilter</filter-name>
@@ -32,7 +35,7 @@
   
   <context-param>
     <param-name>AppBasePath</param-name>
-    <param-value>/home/dataguise/Documents/workspace App/LoginModule</param-value>
+    <param-value>/home/dataguise/Documents/workspace-app/LoginModule</param-value>
   </context-param>
   <context-param>
     <param-name>PropertiesRelativePath</param-name>

@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.model.common.NameTagParam;
+import com.model.common.Vars;
 import com.model.config.workflows.Workflow;
 import com.model.config.workflows.WorkflowRef;
 
@@ -37,7 +38,7 @@ public class LoginServlet extends HttpServlet {
 				request.getRequestDispatcher(url).forward(request, response);
 				break;
 			} case 2: {
-				response.sendRedirect(url);
+				response.sendRedirect(Vars.getContextPath() + url);
 				break;
 			} case 3: {
 				request.getRequestDispatcher(url).include(request, response);
