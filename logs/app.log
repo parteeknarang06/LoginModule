@@ -1,0 +1,74 @@
+2019-05-14 16:55:45,462 INFO -[com.model.config.properties.CoProperties:39]- It is info logger
+2019-05-14 16:55:45,464 DEBUG-[com.model.config.properties.CoProperties:40]- It is debug logger
+2019-05-14 16:55:45,472 INFO -[com.model.common.Vars:82]- Context path is:/app.login
+2019-05-14 16:55:52,920 INFO -[com.controllers.filters.RequestFilter:9]- userAddress:0:0:0:0:0:0:0:1; sessionId:B40EF070BF44A142AC3DB6CB07A2C913; Message:sending to LoginServlet:/
+2019-05-14 16:57:45,625 INFO -[com.controllers.filters.RequestFilter:9]- userAddress:0:0:0:0:0:0:0:1; sessionId:AE64384731146C554E1B1E41B8482C1D; Message:sending to LoginServlet:/
+2019-05-14 16:58:30,435 INFO -[com.controllers.filters.RequestFilter:9]- userAddress:0:0:0:0:0:0:0:1; sessionId:AE64384731146C554E1B1E41B8482C1D; Message:sending to LoginServlet:/
+2019-05-14 17:28:05,304 INFO -[com.model.config.properties.CoProperties:39]- It is info logger
+2019-05-14 17:28:05,306 DEBUG-[com.model.config.properties.CoProperties:40]- It is debug logger
+2019-05-14 17:28:05,311 INFO -[com.model.common.Vars:82]- Context path is:/app.login
+2019-05-15 16:25:34,511 INFO -[com.model.config.properties.CoProperties:39]- It is info logger
+2019-05-15 16:25:34,513 DEBUG-[com.model.config.properties.CoProperties:40]- It is debug logger
+2019-05-15 16:25:34,525 INFO -[com.model.common.Vars:82]- Context path is:/app.login
+2019-05-15 16:25:35,659 INFO -[com.model.config.properties.CoProperties:39]- It is info logger
+2019-05-15 16:25:35,661 DEBUG-[com.model.config.properties.CoProperties:40]- It is debug logger
+2019-05-15 16:25:35,671 INFO -[com.model.common.Vars:82]- Context path is:/LoginModule
+2019-05-15 16:25:45,515 INFO -[com.controllers.filters.RequestFilter:9]- userAddress:0:0:0:0:0:0:0:1; sessionId:F2BCE4F93B11CF77DE487C74771D4BBF; Message:sending to LoginServlet:/
+2019-05-15 16:27:36,762 INFO -[com.model.config.properties.CoProperties:39]- It is info logger
+2019-05-15 16:27:36,780 DEBUG-[com.model.config.properties.CoProperties:40]- It is debug logger
+2019-05-15 16:27:36,789 INFO -[com.model.common.Vars:82]- Context path is:/app.login
+2019-05-15 16:27:58,600 INFO -[com.controllers.filters.RequestFilter:9]- userAddress:0:0:0:0:0:0:0:1; sessionId:F2BCE4F93B11CF77DE487C74771D4BBF; Message:sending to LoginServlet:/
+2019-05-15 16:28:40,483 INFO -[com.model.config.properties.CoProperties:39]- It is info logger
+2019-05-15 16:28:40,484 DEBUG-[com.model.config.properties.CoProperties:40]- It is debug logger
+2019-05-15 16:28:40,501 INFO -[com.model.common.Vars:82]- Context path is:/app.login
+2019-05-15 16:28:41,437 INFO -[com.model.config.properties.CoProperties:39]- It is info logger
+2019-05-15 16:28:41,439 DEBUG-[com.model.config.properties.CoProperties:40]- It is debug logger
+2019-05-15 16:28:41,454 INFO -[com.model.common.Vars:82]- Context path is:/LoginModule
+2019-05-15 16:28:46,312 INFO -[com.controllers.filters.RequestFilter:9]- userAddress:0:0:0:0:0:0:0:1; sessionId:1B8B7B4E13232BEA9B2AE55DAB78A9A7; Message:sending to LoginServlet:/
+2019-05-15 16:32:22,938 INFO -[com.model.config.properties.CoProperties:39]- It is info logger
+2019-05-15 16:32:22,939 DEBUG-[com.model.config.properties.CoProperties:40]- It is debug logger
+2019-05-15 16:35:30,462 INFO -[com.model.config.properties.CoProperties:39]- It is info logger
+2019-05-15 16:35:30,464 DEBUG-[com.model.config.properties.CoProperties:40]- It is debug logger
+2019-05-15 16:36:57,341 INFO -[com.model.config.properties.CoProperties:39]- It is info logger
+2019-05-15 16:36:57,342 DEBUG-[com.model.config.properties.CoProperties:40]- It is debug logger
+2019-05-15 16:36:58,231 INFO -[com.model.config.properties.CoProperties:39]- It is info logger
+2019-05-15 16:36:58,233 DEBUG-[com.model.config.properties.CoProperties:40]- It is debug logger
+2019-05-15 16:37:04,480 INFO -[com.controllers.filters.RequestFilter:9]- userAddress:0:0:0:0:0:0:0:1; sessionId:3CB48AF965CD058AED352253F40BAD42; Message:sending to LoginServlet:/app.login
+2019-05-15 16:40:29,764 INFO -[com.model.config.properties.CoProperties:39]- It is info logger
+2019-05-15 16:40:29,765 DEBUG-[com.model.config.properties.CoProperties:40]- It is debug logger
+2019-05-15 16:40:42,845 INFO -[com.controllers.filters.RequestFilter:9]- userAddress:0:0:0:0:0:0:0:1; sessionId:3CB48AF965CD058AED352253F40BAD42; Message:sending to LoginServlet:/app.login
+2019-05-15 16:40:43,372 INFO -[com.controllers.filters.RequestFilter:9]- userAddress:0:0:0:0:0:0:0:1; sessionId:3CB48AF965CD058AED352253F40BAD42; Message:sending to LoginServlet:/app.login
+2019-05-15 16:55:12,809 INFO -[com.controllers.filters.RequestFilter:9]- userAddress:0:0:0:0:0:0:0:1; sessionId:3CB48AF965CD058AED352253F40BAD42; Message:sending to LoginServlet:/app.login
+2019-05-15 16:55:12,810 INFO -[com.controllers.filters.RequestFilter:9]- userAddress:0:0:0:0:0:0:0:1; sessionId:3CB48AF965CD058AED352253F40BAD42; Message:sending to LoginServlet:/app.login
+2019-05-16 11:15:21,083 INFO -[com.model.config.properties.CoProperties:39]- It is info logger
+2019-05-16 11:15:21,090 DEBUG-[com.model.config.properties.CoProperties:40]- It is debug logger
+2019-05-16 11:15:24,147 INFO -[com.model.config.properties.CoProperties:39]- It is info logger
+2019-05-16 11:15:24,148 DEBUG-[com.model.config.properties.CoProperties:40]- It is debug logger
+2019-05-16 11:15:25,191 INFO -[com.controllers.filters.RequestFilter:9]- userAddress:0:0:0:0:0:0:0:1; sessionId:55336761666152B1863DEF4405DFBDF5; Message:sending to LoginServlet:/app.login
+2019-05-16 11:15:25,200 INFO -[com.controllers.filters.RequestFilter:9]- userAddress:0:0:0:0:0:0:0:1; sessionId:55336761666152B1863DEF4405DFBDF5; Message:sending to LoginServlet:/app.login
+2019-05-16 11:16:57,023 INFO -[com.model.config.properties.CoProperties:39]- It is info logger
+2019-05-16 11:16:57,024 DEBUG-[com.model.config.properties.CoProperties:40]- It is debug logger
+2019-05-16 11:17:00,519 INFO -[com.model.config.properties.CoProperties:39]- It is info logger
+2019-05-16 11:17:00,521 DEBUG-[com.model.config.properties.CoProperties:40]- It is debug logger
+2019-05-16 11:17:55,529 INFO -[com.model.config.properties.CoProperties:39]- It is info logger
+2019-05-16 11:17:55,531 DEBUG-[com.model.config.properties.CoProperties:40]- It is debug logger
+2019-05-16 11:17:58,668 INFO -[com.model.config.properties.CoProperties:39]- It is info logger
+2019-05-16 11:17:58,670 DEBUG-[com.model.config.properties.CoProperties:40]- It is debug logger
+2019-05-16 11:17:59,994 INFO -[com.controllers.filters.RequestFilter:9]- userAddress:0:0:0:0:0:0:0:1; sessionId:278A2DC2E2C40FD2CA2EF653CEE8E5F5; Message:sending to LoginServlet:/app.login
+2019-05-16 11:17:59,994 INFO -[com.controllers.filters.RequestFilter:9]- userAddress:0:0:0:0:0:0:0:1; sessionId:278A2DC2E2C40FD2CA2EF653CEE8E5F5; Message:sending to LoginServlet:/app.login
+2019-05-16 11:18:14,804 INFO -[com.controllers.filters.RequestFilter:9]- userAddress:0:0:0:0:0:0:0:1; sessionId:278A2DC2E2C40FD2CA2EF653CEE8E5F5; Message:sending to LoginServlet:/app.login
+2019-05-16 11:18:14,804 INFO -[com.controllers.filters.RequestFilter:9]- userAddress:0:0:0:0:0:0:0:1; sessionId:278A2DC2E2C40FD2CA2EF653CEE8E5F5; Message:sending to LoginServlet:/app.login
+2019-05-16 11:19:57,744 INFO -[com.model.config.properties.CoProperties:39]- It is info logger
+2019-05-16 11:19:57,746 DEBUG-[com.model.config.properties.CoProperties:40]- It is debug logger
+2019-05-16 11:20:00,836 INFO -[com.model.config.properties.CoProperties:39]- It is info logger
+2019-05-16 11:20:00,837 DEBUG-[com.model.config.properties.CoProperties:40]- It is debug logger
+2019-05-16 11:20:01,751 INFO -[com.controllers.filters.RequestFilter:9]- userAddress:0:0:0:0:0:0:0:1; sessionId:31D61AE1ABCBE8D95EDBE06C1255EFD6; Message:sending to LoginServlet:/app.login
+2019-05-16 11:20:01,751 INFO -[com.controllers.filters.RequestFilter:9]- userAddress:0:0:0:0:0:0:0:1; sessionId:31D61AE1ABCBE8D95EDBE06C1255EFD6; Message:sending to LoginServlet:/app.login
+2019-05-16 11:21:53,079 INFO -[com.model.config.properties.CoProperties:39]- It is info logger
+2019-05-16 11:21:53,080 DEBUG-[com.model.config.properties.CoProperties:40]- It is debug logger
+2019-05-16 11:22:34,236 INFO -[com.model.config.properties.CoProperties:39]- It is info logger
+2019-05-16 11:22:34,237 DEBUG-[com.model.config.properties.CoProperties:40]- It is debug logger
+2019-05-16 11:23:36,467 INFO -[com.model.config.properties.CoProperties:39]- It is info logger
+2019-05-16 11:23:36,468 DEBUG-[com.model.config.properties.CoProperties:40]- It is debug logger
+2019-05-16 11:23:42,301 INFO -[com.controllers.filters.RequestFilter:9]- userAddress:0:0:0:0:0:0:0:1; sessionId:31D61AE1ABCBE8D95EDBE06C1255EFD6; Message:sending to LoginServlet:/app.login
+2019-05-16 11:23:42,301 INFO -[com.controllers.filters.RequestFilter:9]- userAddress:0:0:0:0:0:0:0:1; sessionId:31D61AE1ABCBE8D95EDBE06C1255EFD6; Message:sending to LoginServlet:/app.login

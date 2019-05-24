@@ -18,7 +18,7 @@
 			<ACTION method="checkLoginStatus" name="CHECK_STATUS">
 				<RESULTS>	
 					<RESULT name="LOGIN_OK" dest="HOME">
-						<NAVIGATION>1</NAVIGATION>
+						<NAVIGATION>2</NAVIGATION>
 					</RESULT>	
 					<RESULT name="NEED_LOGIN" dest="LOGIN_PAGE">
 						<NAVIGATION>1</NAVIGATION>

@@ -19,9 +19,6 @@
   <listener>
     <listener-class>com.controllers.listners.FileLoaders</listener-class>
   </listener>
-  <listener>
-  	<listener-class>com.controllers.listners.ContentLoaders</listener-class>
-  </listener>
   
   <filter>
     <filter-name>RequestFilter</filter-name>

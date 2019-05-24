@@ -1,16 +1,6 @@
 package com.model.common;
 
-import javax.servlet.ServletContextEvent;
-
-import org.apache.log4j.Logger;
-
 public class Vars {
-	private static final Logger logger;
-	/**
-	 * Application Values
-	 */
-	private static String CONTEXT_PATH;
-	
 	/**
 	 * Servlet Context Parameters
 	 **/
@@ -43,7 +33,6 @@ public class Vars {
 	public static final String PIPE;
 	
 	static {
-		logger = Logger.getLogger(Vars.class);
 		/**
 		 * Servlet Context Parameters
 		 **/
@@ -74,16 +63,5 @@ public class Vars {
 		 **/
 		USER_ADDRESS = "_userId_";
 		SESSION_ID = "_sessionID_";
-		
 	}
-	
-	public static void setContextPath(ServletContextEvent event) {
-		CONTEXT_PATH = CONTEXT_PATH==null || CONTEXT_PATH.isEmpty() ? event.getServletContext().getContextPath() : CONTEXT_PATH;
-		logger.info("Context path is:"+CONTEXT_PATH);
-	}
-	
-	public static String getContextPath() {
-		return CONTEXT_PATH;
-	}
-	
 }

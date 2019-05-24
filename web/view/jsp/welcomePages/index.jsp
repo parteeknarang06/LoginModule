@@ -10,9 +10,9 @@
 		<%=request.getServletContext().getServletContextName() %> <br>
 		<%=request.getServletContext().getContextPath() %> <br>
 		<%=request.getServletPath() %>
-		<%-- <%
-			response.sendRedirect(request.getServletContext().getContextPath()+"/init");
-		%> --%>
+		<%
+			//response.sendRedirect(request.getServletContext().getContextPath()+"/init");
+		%> 
 		<form action="/app.login/init">
 			<input type="text" value="12" name="test">
 			<button type="submit">Click init</button>

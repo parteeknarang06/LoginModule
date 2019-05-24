@@ -12,7 +12,6 @@ public class LoginHandler {
 	
 	public ActionResult checkLoginStatus(HttpServletRequest request,HttpServletResponse response,RowColStore rcs,NameTagParam ntp) {
 		rcs.dropAllRows();
-		
 		return new WorkflowActionResult("NEED_LOGIN");
 	}
 	
