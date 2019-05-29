@@ -3,7 +3,6 @@ package com.controllers.servlets;
 import java.io.IOException;
 import java.util.List;
 
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -20,8 +19,8 @@ public class LoginServlet extends HttpServlet {
 		NameTagParam ntp=new NameTagParam(request);
 		Workflow workflow=WorkflowRef.getWorkflows().get(ntp.getHandlerClass());
 		List<String> result=workflow.getUrlForAction(request, response,ntp);
-		//navigate(request, response, result);
-		crossNavigate(request, response);
+		navigate(request, response, result);
+		//crossNavigate(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -44,14 +43,16 @@ public class LoginServlet extends HttpServlet {
 			}
 		}
 	}
-	
+	/*
 	private void crossNavigate(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		ServletContext context = request.getServletContext();
+		context.setAttribute("crossrequest", "I am from LoginServlet");
 		request.setAttribute("crossrequest", "I am from LoginServlet");
-		response.sendRedirect("/spring.mvc/CrossCheckServlet");
 		request.getSession().setAttribute("crossrequest", "I am from LoginServlet");
-		/*
+		response.sendRedirect("/spring.mvc/CrossCheckServlet");
+		
 		ServletContext context = request.getServletContext().getContext("/spring.mvc");
 		context.getRequestDispatcher("/CrossCheckServlet").forward(request, response);
-		*/
-	}
+		
+	} */
 }

@@ -17,6 +17,7 @@ public class WorkflowRepresentation implements Workflow {
 		this.workflowName=workflowName;
 	}
 	
+	@SuppressWarnings("unchecked")
 	@Override
 	public HashMap<String, String> getPagesList() {
 		return (HashMap<String, String>) pagesList.clone();

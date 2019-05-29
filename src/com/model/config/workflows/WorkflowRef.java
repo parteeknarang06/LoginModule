@@ -20,6 +20,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+import com.model.common.DuplicateWorkflow;
 import com.model.common.NameTagParam;
 import com.model.common.RowColStore;
 import com.model.common.Vars;
@@ -33,7 +34,7 @@ public class WorkflowRef {
 		workflows = new HashMap<String, Workflow>();
 	}
 
-	public static void loadWorkflows(ServletContextEvent event) {
+	public static void loadWorkflows(ServletContextEvent event) throws DuplicateWorkflow {
 		String appBasePath=null;
 		String workflowsRelativePath=null;
 		
@@ -48,16 +49,15 @@ public class WorkflowRef {
 		}
 	}
 
-	private static void load(InputStream workflowXML) {
+	private static void load(InputStream workflowFile) throws DuplicateWorkflow {
 		DocumentBuilder builder = null;
 		DocumentBuilderFactory factory = null;
 		Document document = null;
 		NodeList workflowsXML = null;
-
 		try {
 			factory = DocumentBuilderFactory.newInstance();
 			builder = factory.newDocumentBuilder();
-			document = builder.parse(workflowXML);
+			document = builder.parse(workflowFile);
 			document.getDocumentElement().normalize();
 			workflowsXML = document.getDocumentElement().getChildNodes(); // WORKFLOW tags
 			for (int index = 0; index < workflowsXML.getLength(); index++) {
@@ -82,81 +82,67 @@ public class WorkflowRef {
 		} 
 	}
 
-	private static void load(Element workflowXML) throws ClassNotFoundException, NoSuchMethodException, SecurityException {
-		Workflow workflow = null;
-		Actions workflowActions = null;
-		NodeList pagesNodes = null;
-		NodeList actionsNodes = null;
-		HashMap<String, String> pagesList = null;
-		HashMap<String, Actions> actionsList = null;
-		Element pageElement = null;
-		Element actionElement = null;
-		
-		pagesList = new HashMap<String, String>();
-		actionsList = new HashMap<String, Actions>();
-		workflow = new WorkflowRepresentation(workflowXML.getAttribute("name"));
+	private static void load(Element workflowXML) throws ClassNotFoundException, NoSuchMethodException, SecurityException, DuplicateWorkflow {
+		HashMap<String, String> pagesList = new HashMap<String, String>();
+		HashMap<String, Actions> actionsList = new HashMap<String, Actions>();
+		Workflow workflow = new WorkflowRepresentation(workflowXML.getAttribute("name"));
 		workflow.setActions(actionsList);
 		workflow.setPagesList(pagesList);
 		workflow.setHandlerClass(Class.forName(workflowXML.getAttribute("class")));
-		pagesNodes = workflowXML.getElementsByTagName("PAGE");
+		NodeList pagesNodes = workflowXML.getElementsByTagName("PAGE");
 		
 		for (int index = 0; index < pagesNodes.getLength(); index++) {
-			pageElement = (Element) pagesNodes.item(index);
+			Element pageElement = (Element) pagesNodes.item(index);
 			switch (pageElement.getNodeType()) {
 				case Node.ELEMENT_NODE:
-					pagesList.put(pageElement.getAttribute("name"), pageElement.getAttribute("jsp"));
+					pagesList.put(pageElement.getAttribute("name"), pageElement.getAttribute("view"));
 					break;
 			}
 		}
 
-		actionsNodes = workflowXML.getElementsByTagName("ACTION");
+		NodeList actionsNodes = workflowXML.getElementsByTagName("ACTION");
 		for (int index = 0; index < actionsNodes.getLength(); index++) {
-			actionElement = (Element) actionsNodes.item(index);
+			Element actionElement = (Element) actionsNodes.item(index);
 			switch (actionElement.getNodeType()) {
 				case Node.ELEMENT_NODE:
-					workflowActions=getWorkflowAction(actionElement);
+					Actions workflowActions=getWorkflowAction(actionElement);
 					workflowActions.setWorkflow(new WeakReference<Workflow>(workflow));
 					workflowActions.setMethod(workflow.getHandlerClass().getMethod(actionElement.getAttribute("method"), getParamters()));
 					actionsList.put(actionElement.getAttribute("name"),workflowActions);
 					break;
 			}
 		}
-		
-		workflows.put(workflowXML.getAttribute("name"), workflow);
+		if(!workflows.containsKey(workflowXML.getAttribute("name"))) {
+			workflows.put(workflowXML.getAttribute("name"), workflow);
+		} else {
+			workflows.clear();
+			throw new DuplicateWorkflow(workflowXML.getAttribute("name"));
+		}
 	}
 	
 	private static Actions getWorkflowAction(Element actionElement) {
-		Actions workflowActions = null;
-		HashMap<String,Results> resultsList=null;
-		NodeList resultsNodes = null;
-		Element resultElement = null;
-		
-		resultsNodes=actionElement.getElementsByTagName("RESULT");
-		resultsList=new HashMap<String,Results>();
+		NodeList resultsNodes=actionElement.getElementsByTagName("RESULT");
+		HashMap<String,Results> resultsList=new HashMap<String,Results>();
 		for(int index=0; index<resultsNodes.getLength(); index++) {
-			resultElement=(Element)resultsNodes.item(index);
+			Element resultElement=(Element)resultsNodes.item(index);
 			switch (resultElement.getNodeType()) {
 				case Node.ELEMENT_NODE:
 					putWorkflowResult(resultsList,resultElement);
 					break;
 			}
 		}
-		workflowActions = new WorkflowActions();
+		Actions workflowActions = new WorkflowActions();
 		workflowActions.setResultsList(resultsList);
 		return workflowActions;
 	}
 	
 	private static void putWorkflowResult(HashMap<String,Results> resultsList, Element resultElement) {
-		Element navigationElement=null;
-		NodeList navigationList=null;
-		Results workflowResults=null;
-		
-		workflowResults=new WorkflowResults();
+		Results workflowResults=new WorkflowResults();
 		workflowResults.setResultName(resultElement.getAttribute("name"));
 		workflowResults.setDestName(resultElement.getAttribute("dest"));
-		navigationList=resultElement.getElementsByTagName("NAVIGATION");
+		NodeList navigationList=resultElement.getElementsByTagName("NAVIGATION");
 		for(int index=0; index<navigationList.getLength(); index++) {
-			navigationElement=(Element)navigationList.item(index);
+			Element navigationElement=(Element)navigationList.item(index);
 			switch (navigationElement.getNodeType()) {
 				case Node.ELEMENT_NODE:
 					workflowResults.setNavigation(navigationElement.getTextContent().trim());
@@ -177,8 +163,8 @@ public class WorkflowRef {
 	
 	public static Object[] getArgument(HttpServletRequest request, HttpServletResponse response,RowColStore rcs,NameTagParam ntp) {
 		return new Object[] {request,response,rcs,ntp};
-		
 	}
+	
 	public static HashMap<String, Workflow> getWorkflows() {
 		return workflows;
 	}

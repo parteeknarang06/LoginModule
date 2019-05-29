@@ -10,8 +10,8 @@
 	<WORKFLOW class="com.model.service.LoginHandler" name="LOGIN">
 	
 		<PAGES>
-			<PAGE name="LOGIN_PAGE" jsp="/view/jsp/login/index.jsp"/>
-			<PAGE name="HOME" jsp=""/>
+			<PAGE name="LOGIN_PAGE" view="/view/jsp/login/index.jsp"/>
+			<PAGE name="HOME" view=""/>
 		</PAGES>
 		
 		<ACTIONS>

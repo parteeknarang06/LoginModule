@@ -25,7 +25,7 @@ public class NameTagParam extends RowColStore {
 				load(request,paramName);
 			}
 		}
-		handlerClass= handlerClass==null || handlerClass.isEmpty() ? "LOGIN" : handlerClass;
+		handlerClass = handlerClass==null  || handlerClass.isEmpty()  ? "LOGIN" : handlerClass;
 		handlerMethod= handlerMethod==null || handlerMethod.isEmpty() ? "CHECK_STATUS" : handlerMethod;
 	}
 	
