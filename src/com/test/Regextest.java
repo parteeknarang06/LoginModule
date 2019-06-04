@@ -1,11 +1,12 @@
 package com.test;
 
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Regextest {
 
 	public static void main(String[] args) {
-		Pattern pattern=Pattern.compile("");
+		Pattern pattern=Pattern.compile("^.*/([^/]*)[/]?$");
 		String input="[\n" + 
 				"	{\n" + 
 				"		\"Version\": \"2012-10-17\",\n" + 
@@ -36,8 +37,10 @@ public class Regextest {
 				"		}]\n" + 
 				"	}\n" + 
 				"]";
-		
-
+		Matcher mat= pattern.matcher("rochak22/100Files/43/");
+		if(mat.find()) {
+			System.out.println(mat.group(1));
+		}
 	}
 
 }
