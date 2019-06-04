@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Login Module" default="info">
+
+	<property file="build.properties"/>
+	
+	<target name="info">
+		<echo>Hello World! This is apache ant</echo>
+		<echo>Apache ant version is: ${ant.version}</echo>
+		<echo>Apache lib: ${ant.library.dir}</echo>
+		<echo>Build file located at : ${ant.file}</echo>
+		<echo>Project: ${ant.project.name}</echo>
+	</target>
+	
+	<target name="clean" depends="info">
+		<delete dir="${server.deploy}${app.deploy.name}">
+		</delete>
+	</target>
+	
+	<target name="war" >
+		
+	</target>
+	
+</project>
