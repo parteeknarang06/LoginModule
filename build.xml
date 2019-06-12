@@ -2,6 +2,14 @@
 <project name="Login Module" default="info">
 
 	<property file="build.properties"/>
+	<property name="src" value="src"/>
+	<property name="web" value="web"/>
+	<property name="lib" value="lib"/>
+	
+	<property name="web.dir" value="${catalina.webapp}${app.deployname}/"></property>
+	<property name="lib.dir" value="${catalina.webapp}${app.deployname}/WEB-INF/lib"></property>
+	<property name="build.dir" value="${catalina.webapp}${app.deployname}/WEB-INF/classes"></property>
+	
 	
 	<target name="info">
 		<echo>Hello World! This is apache ant</echo>
@@ -12,12 +20,32 @@
 	</target>
 	
 	<target name="clean" depends="info">
-		<delete dir="${server.webapp}${app.deployname}">
-		</delete>
+		<delete dir="${catalina.webapp}${app.deployname}"/>
 	</target>
 	
-	<target name="war" >
-		
+	<target name="build" depends="clean">
+		<copy todir="${web.dir}">
+			<fileset dir="${web}">
+			</fileset>
+		</copy>
+		<copy todir="${lib.dir}">
+			<fileset dir="${lib}">
+			</fileset>
+		</copy>
+		<mkdir dir="${build.dir}"/>
+		<javac destdir="${build.dir}" debug="true">
+			<src path="${src}"/>
+			<classpath refid="lib-path"/>
+		</javac>
 	</target>
+	
+	<path id="lib-path">
+		<fileset dir="${lib.dir}">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="${catalina.lib}">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
 	
 </project>

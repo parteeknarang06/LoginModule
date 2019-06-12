@@ -202,3 +202,15 @@
 2019-06-11 16:44:35,763 DEBUG-[com.model.config.properties.CoProperties:40]- It is debug logger
 2019-06-11 16:44:36,907 INFO -[com.controllers.filters.RequestFilter:9]- userAddress:0:0:0:0:0:0:0:1; sessionId:307558490CD27399AA7F8666C8FBCDA0; Message:sending to LoginServlet:/app.login
 2019-06-11 16:44:36,907 INFO -[com.controllers.filters.RequestFilter:9]- userAddress:0:0:0:0:0:0:0:1; sessionId:307558490CD27399AA7F8666C8FBCDA0; Message:sending to LoginServlet:/app.login
+2019-06-12 15:46:37,416 INFO -[com.model.config.properties.CoProperties:39]- It is info logger
+2019-06-12 15:46:37,417 DEBUG-[com.model.config.properties.CoProperties:40]- It is debug logger
+2019-06-12 15:46:38,200 INFO -[com.model.config.properties.CoProperties:39]- It is info logger
+2019-06-12 15:46:38,201 DEBUG-[com.model.config.properties.CoProperties:40]- It is debug logger
+2019-06-12 15:46:39,145 INFO -[com.controllers.filters.RequestFilter:9]- userAddress:0:0:0:0:0:0:0:1; sessionId:FEE14A6BE7D93BB3DBB371AA0EE874E1; Message:sending to LoginServlet:/app.login
+2019-06-12 15:46:39,158 INFO -[com.controllers.filters.RequestFilter:9]- userAddress:0:0:0:0:0:0:0:1; sessionId:FEE14A6BE7D93BB3DBB371AA0EE874E1; Message:sending to LoginServlet:/app.login
+2019-06-12 18:00:41,151 INFO -[com.model.config.properties.CoProperties:39]- It is info logger
+2019-06-12 18:00:41,179 DEBUG-[com.model.config.properties.CoProperties:40]- It is debug logger
+2019-06-12 18:00:42,086 INFO -[com.model.config.properties.CoProperties:39]- It is info logger
+2019-06-12 18:00:42,087 DEBUG-[com.model.config.properties.CoProperties:40]- It is debug logger
+2019-06-12 18:01:20,616 INFO -[com.controllers.filters.RequestFilter:9]- userAddress:0:0:0:0:0:0:0:1; sessionId:21CF2D7450BA950B10060324546EFD16; Message:sending to LoginServlet:/app.login
+2019-06-12 18:01:20,616 INFO -[com.controllers.filters.RequestFilter:9]- userAddress:0:0:0:0:0:0:0:1; sessionId:21CF2D7450BA950B10060324546EFD16; Message:sending to LoginServlet:/app.login
