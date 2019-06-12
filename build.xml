@@ -12,7 +12,7 @@
 	</target>
 	
 	<target name="clean" depends="info">
-		<delete dir="${server.deploy}${app.deploy.name}">
+		<delete dir="${server.webapp}${app.deployname}">
 		</delete>
 	</target>
 	
