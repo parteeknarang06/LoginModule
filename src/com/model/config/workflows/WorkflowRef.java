@@ -35,11 +35,8 @@ public class WorkflowRef {
 	}
 
 	public static void loadWorkflows(ServletContextEvent event) throws DuplicateWorkflow {
-		String appBasePath=null;
-		String workflowsRelativePath=null;
-		
-		appBasePath=event.getServletContext().getInitParameter(Vars.APPBASE_PATH);
-		workflowsRelativePath=event.getServletContext().getInitParameter(Vars.WORKFLOWS_RELATIVE_PATH);
+		String appBasePath=event.getServletContext().getRealPath("/");
+		String workflowsRelativePath=event.getServletContext().getInitParameter(Vars.WORKFLOWS_RELATIVE_PATH);
 		for (File workflowXML : new File(appBasePath.concat(workflowsRelativePath)).listFiles()) {
 			try {
 				load(new FileInputStream(workflowXML));

@@ -5,11 +5,12 @@
 	<property name="src" value="src"/>
 	<property name="web" value="web"/>
 	<property name="lib" value="lib"/>
+	<property name="config" value="Config"/>
 	
 	<property name="web.dir" value="${catalina.webapp}${app.deployname}/"></property>
 	<property name="lib.dir" value="${catalina.webapp}${app.deployname}/WEB-INF/lib"></property>
 	<property name="build.dir" value="${catalina.webapp}${app.deployname}/WEB-INF/classes"></property>
-	
+	<property name="config.dir" value="${catalina.webapp}${app.deployname}/Config"></property>
 	
 	<target name="info">
 		<echo>Hello World! This is apache ant</echo>
@@ -28,10 +29,17 @@
 			<fileset dir="${web}">
 			</fileset>
 		</copy>
-		<copy todir="${lib.dir}">
+		<copy todir="${lib.dir}" flatten="true">
 			<fileset dir="${lib}">
+				<include name="**/*.jar"/>
 			</fileset>
 		</copy>
+		
+		<copy todir="${config.dir}">
+			<fileset dir="${config}">
+			</fileset>
+		</copy>
+		
 		<mkdir dir="${build.dir}"/>
 		<javac destdir="${build.dir}" debug="true">
 			<src path="${src}"/>

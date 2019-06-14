@@ -36,11 +36,11 @@
   </context-param>
   <context-param>
     <param-name>PropertiesRelativePath</param-name>
-    <param-value>/Config/Properties/</param-value>
+    <param-value>Config/Properties/</param-value>
   </context-param>
   <context-param>
     <param-name>WorkflowsRelativePath</param-name>
-    <param-value>/Config/Workflows/</param-value>
+    <param-value>Config/Workflows/</param-value>
   </context-param>
   
 </web-app>

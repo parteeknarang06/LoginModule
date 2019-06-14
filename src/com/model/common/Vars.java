@@ -4,7 +4,6 @@ public class Vars {
 	/**
 	 * Servlet Context Parameters
 	 **/
-	public static final String APPBASE_PATH;
 	public static final String PROP_RELATIVE_PATH;
 	public static final String WORKFLOWS_RELATIVE_PATH;
 	
@@ -36,7 +35,6 @@ public class Vars {
 		/**
 		 * Servlet Context Parameters
 		 **/
-		APPBASE_PATH		= "AppBasePath";
 		PROP_RELATIVE_PATH	= "PropertiesRelativePath";
 		WORKFLOWS_RELATIVE_PATH = "WorkflowsRelativePath";
 		
