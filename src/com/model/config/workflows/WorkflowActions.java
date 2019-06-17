@@ -42,7 +42,7 @@ public class WorkflowActions implements Actions {
 	}
 
 	@Override
-	public List<String> excecute(HttpServletRequest request, HttpServletResponse response, NameTagParam ntp) {
+	public List<String> execute(HttpServletRequest request, HttpServletResponse response, NameTagParam ntp) {
 		Workflow workflow = null;
 		RowColStore rcs = null;
 		ActionResult workflowAction = null;

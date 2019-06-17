@@ -13,5 +13,5 @@ public interface Actions {
 	void setResultsList(HashMap<String, Results> resultsList);
 	void setWorkflow(WeakReference<Workflow> workflow);
 	void setMethod(Method method);
-	List<String> excecute(HttpServletRequest request, HttpServletResponse response,NameTagParam ntp);
+	List<String> execute(HttpServletRequest request, HttpServletResponse response,NameTagParam ntp);
 }

@@ -45,7 +45,7 @@ public class WorkflowRepresentation implements Workflow {
 
 	@Override
 	public List<String> getUrlForAction(HttpServletRequest request, HttpServletResponse response,NameTagParam ntp) {
-		return actions.get(ntp.getHandlerMethod()).excecute(request, response,ntp);
+		return actions.get(ntp.getHandlerMethod()).execute(request, response,ntp);
 	}
 
 	@Override
