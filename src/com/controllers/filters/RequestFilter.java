@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
 
-import com.model.common.Utility;
+import com.model.common.LoggerUtility;
 
 public class RequestFilter implements Filter {
 	public static Logger logger;
@@ -26,8 +26,8 @@ public class RequestFilter implements Filter {
 		HttpServletRequest httpRequest = (HttpServletRequest)request;
 		HttpServletResponse httpResponse= (HttpServletResponse)response;
 		if(httpRequest.getServletPath()==null || httpRequest.getServletPath().equals("/")) {
-			Utility.logInfo(logger, httpRequest, "sending to LoginServlet:"+httpRequest.getServletContext().getContextPath());
-			Utility.logInfo(logger, httpRequest, "sending to LoginServlet:"+httpRequest.getContextPath());
+			LoggerUtility.logInfo(logger, httpRequest, "sending to LoginServlet:"+httpRequest.getServletContext().getContextPath());
+			LoggerUtility.logInfo(logger, httpRequest, "sending to LoginServlet:"+httpRequest.getContextPath());
 			if (httpRequest.getContextPath().matches(httpRequest.getServletContext().getContextPath())) {
 				httpResponse.sendRedirect(httpRequest.getContextPath()+"/loginCheck");
 			}

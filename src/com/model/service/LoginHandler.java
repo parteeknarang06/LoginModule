@@ -7,7 +7,7 @@ import org.apache.log4j.Logger;
 
 import com.model.common.NameTagParam;
 import com.model.common.RowColStore;
-import com.model.common.Utility;
+import com.model.common.LoggerUtility;
 import com.model.config.workflows.ActionResult;
 import com.model.config.workflows.WorkflowActionResult;
 
@@ -18,7 +18,7 @@ public class LoginHandler {
 	}
 	public ActionResult checkLoginStatus(HttpServletRequest request,HttpServletResponse response,RowColStore rcs,NameTagParam ntp) {
 		rcs.dropAllRows();
-		Utility.logInfo(logger, request, "Jsessionid size:"+request.getSession().getId().length());
+		LoggerUtility.logInfo(logger, request, "Jsessionid size:"+request.getSession().getId().length());
 		return new WorkflowActionResult("NEED_LOGIN");
 	}
 	

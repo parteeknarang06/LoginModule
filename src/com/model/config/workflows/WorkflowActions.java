@@ -13,7 +13,7 @@ import org.apache.log4j.Logger;
 
 import com.model.common.NameTagParam;
 import com.model.common.RowColStore;
-import com.model.common.Utility;
+import com.model.common.LoggerUtility;
 import com.model.common.Vars;
 
 public class WorkflowActions implements Actions {
@@ -56,11 +56,11 @@ public class WorkflowActions implements Actions {
 			rcs.merge(ntp);
 			setRowColStore(request.getSession(), workflow, rcs);
 		} catch (IllegalAccessException e) {
-			Utility.logError(logger, request, e, "IllegalAccessException occurred during invoking the service layer:" + e.getMessage());
+			LoggerUtility.logError(logger, request, e, "IllegalAccessException occurred during invoking the service layer:" + e.getMessage());
 		} catch (InvocationTargetException e) {
-			Utility.logError(logger, request, e, "InvocationTargetException occurred during invoking the service layer:" + e.getMessage());
+			LoggerUtility.logError(logger, request, e, "InvocationTargetException occurred during invoking the service layer:" + e.getMessage());
 		} catch (InstantiationException e) {
-			Utility.logError(logger, request, e, "InstantiationException occurred during invoking the service layer:" + e.getMessage());
+			LoggerUtility.logError(logger, request, e, "InstantiationException occurred during invoking the service layer:" + e.getMessage());
 		}
 		return getResult(resultsList.get(workflowAction.getResultName()));
 	}

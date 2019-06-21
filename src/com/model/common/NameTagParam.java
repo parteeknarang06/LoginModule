@@ -62,7 +62,7 @@ public class NameTagParam extends RowColStore {
 			}
 			putRowCol(row, col, !temp.isEmpty() ? temp.substring(0, temp.length()-1) : Vars.BLANK);
 		} catch(Exception ex) {
-			Utility.logError(logger, request, ex, "Exception occurred while taking params:"+ex.getMessage());
+			LoggerUtility.logError(logger, request, ex, "Exception occurred while taking params:"+ex.getMessage());
 		}
 	}
 	

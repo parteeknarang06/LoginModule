@@ -3,7 +3,7 @@ package com.model.common;
 import javax.servlet.http.HttpServletRequest;
 import org.apache.log4j.Logger;
 
-public class Utility {
+public class LoggerUtility {
 	
 	public static void logInfo(Logger logger,HttpServletRequest request,String Message) {
 		logger.info("userAddress:"+request.getRemoteAddr()+"; sessionId:"+request.getSession().getId()+"; Message:"+Message);
