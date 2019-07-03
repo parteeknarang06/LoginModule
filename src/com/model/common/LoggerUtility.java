@@ -10,7 +10,7 @@ public class LoggerUtility {
 	}
 	
 	public static void logInfo(Logger logger,RowColStore rcs,String Message) {
-		logger.info("userAddress: "+rcs.getRowCol(Vars.APPLICATION, Vars.USER_ADDRESS)+"; sessionId: "+rcs.getRowCol(Vars.APPLICATION, Vars.SESSION_ID)+"; Message: "+Message);
+		logger.info("userAddress: "+rcs.getRowCol(Vars.REQUEST, Vars.USER_ADDRESS)+"; sessionId: "+rcs.getRowCol(Vars.REQUEST, Vars.SESSION_ID)+"; Message: "+Message);
 	}
 	
 	public static void logError(Logger logger,HttpServletRequest request,Exception ex,String Message) {

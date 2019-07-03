@@ -7,6 +7,7 @@ import org.apache.log4j.Logger;
 
 import com.model.common.NameTagParam;
 import com.model.common.RowColStore;
+import com.model.common.Vars;
 import com.model.action.Login;
 import com.model.common.LoggerUtility;
 import com.model.config.workflows.ActionResult;
@@ -17,17 +18,17 @@ public class LoginHandler {
 	static {
 		logger= Logger.getLogger(LoginHandler.class);
 	}
-	public ActionResult checkLoginStatus(HttpServletRequest request,HttpServletResponse response,RowColStore rcs,NameTagParam ntp) {
+	public ActionResult checkLoginStatus(HttpServletRequest request, HttpServletResponse response, RowColStore rcs, NameTagParam ntp) {
 		rcs.dropAllRows();
 		LoggerUtility.logInfo(logger, request, "Jsessionid size:"+request.getSession().getId().length());
-		
 		return new WorkflowActionResult("NEED_LOGIN");
 	}
 	
-	public ActionResult logMeIn(HttpServletRequest request,HttpServletResponse response,RowColStore rcs,NameTagParam ntp) {
+	public ActionResult logMeIn(HttpServletRequest request, HttpServletResponse response, RowColStore rcs, NameTagParam ntp) {
 		rcs.dropAllRows();
 		Login login = new Login();
 		login.createToken(request.getSession().getId());
+		rcs.putRowCol(Vars.LOGIN, Vars.TOKEN, login.getToken());
 		return new WorkflowActionResult("LOGIN_OK");
 	}
 }

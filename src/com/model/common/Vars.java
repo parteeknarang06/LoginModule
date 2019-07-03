@@ -15,14 +15,15 @@ public class Vars {
 	/**
 	 * RowColStore rows
 	 **/
-	public static final String APPLICATION;
+	public static final String REQUEST;
+	public static final String LOGIN;
 	
 	/**
 	 * RowColStore cols
 	 **/
 	public static final String USER_ADDRESS;
 	public static final String SESSION_ID;
-	
+	public static final String TOKEN;
 	/**
 	 * Common Used Values
 	 **/
@@ -54,12 +55,14 @@ public class Vars {
 		/**
 		 * RowColStore rows
 		 **/
-		APPLICATION = "_application_";
+		REQUEST = "_request_";
+		LOGIN="_login_";
 		
 		/**
 		 * RowColStore cols
 		 **/
 		USER_ADDRESS = "_userId_";
 		SESSION_ID = "_sessionID_";
+		TOKEN="_token_";
 	}
 }

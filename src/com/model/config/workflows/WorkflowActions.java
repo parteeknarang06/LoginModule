@@ -66,8 +66,8 @@ public class WorkflowActions implements Actions {
 	}
 
 	private static void putRequestDetails(HttpServletRequest request, RowColStore rcs) {
-		rcs.putRowCol(Vars.APPLICATION, Vars.USER_ADDRESS, request.getRemoteAddr());
-		rcs.putRowCol(Vars.APPLICATION, Vars.SESSION_ID, request.getSession().getId());
+		rcs.putRowCol(Vars.REQUEST, Vars.USER_ADDRESS, request.getRemoteAddr());
+		rcs.putRowCol(Vars.REQUEST, Vars.SESSION_ID, request.getSession().getId());
 	}
 
 	private List<String> getResult(Results result) {
