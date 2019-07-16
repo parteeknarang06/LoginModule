@@ -8,7 +8,7 @@ import org.apache.log4j.Logger;
 import com.model.common.NameTagParam;
 import com.model.common.RowColStore;
 import com.model.common.Vars;
-import com.model.action.Login;
+import com.model.action.LoginImpl;
 import com.model.common.LoggerUtility;
 import com.model.config.workflows.ActionResult;
 import com.model.config.workflows.WorkflowActionResult;
@@ -26,7 +26,7 @@ public class LoginHandler {
 	
 	public ActionResult logMeIn(HttpServletRequest request, HttpServletResponse response, RowColStore rcs, NameTagParam ntp) {
 		rcs.dropAllRows();
-		Login login = new Login();
+		LoginImpl login = new LoginImpl();
 		login.createToken(request.getSession().getId());
 		rcs.putRowCol(Vars.LOGIN, Vars.TOKEN, login.getToken());
 		return new WorkflowActionResult("LOGIN_OK");

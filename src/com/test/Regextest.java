@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 public class Regextest {
 
 	public static void main(String[] args) {
-		Pattern pattern=Pattern.compile("^.*/([^/]*)[/]?$");
+		Pattern pattern=Pattern.compile("^(.*)\\(");
 		String input="[\n" + 
 				"	{\n" + 
 				"		\"Version\": \"2012-10-17\",\n" + 
@@ -37,7 +37,7 @@ public class Regextest {
 				"		}]\n" + 
 				"	}\n" + 
 				"]";
-		Matcher mat= pattern.matcher("rochak22/100Files/43/");
+		Matcher mat= pattern.matcher("The role with name harinder-dev-role-EMR_EC2_DefaultRole2 cannot be found. (Service: AmazonIdentityManagement; Status Code: 404; Error Code: NoSuchEntity; Request ID: d5c056d0-a3de-11e9-8fbf-6d2072fb443f)");
 		if(mat.find()) {
 			System.out.println(mat.group(1));
 		}
