@@ -11,6 +11,7 @@ public class LoginImpl implements Login{
 		logger = Logger.getLogger(LoginImpl.class);
 	}
 	
+	@Override
 	public void createToken(String sessionId) {
 		Random random=new Random();
 		do {
@@ -20,6 +21,7 @@ public class LoginImpl implements Login{
 		} while(token.length()<17);
 	}
 	
+	@Override
 	public String getToken() {
 		return token.toString();
 	}
